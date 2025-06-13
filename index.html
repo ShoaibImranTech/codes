@@ -1814,6 +1814,222 @@
         </div>
     </section>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Section - Professional Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --gradient-primary: linear-gradient(135deg, #3498db, #2c3e50);
+            --gradient-accent: linear-gradient(135deg, #e74c3c, #f39c12);
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--light);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .education-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .education-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .education-card:hover .education-icon {
+            background: var(--gradient-accent);
+            transform: scale(1.05);
+        }
+
+        .education-content {
+            text-align: center;
+        }
+
+        .education-year {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(52, 152, 219, 0.12);
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .education-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .education-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .education-institution {
+            font-weight: 600;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.3;
+        }
+
+        .education-marks {
+            font-weight: 600;
+            color: #2ecc71;
+            font-size: 1rem;
+        }
+
+        .education-description {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            #education {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+            
+            .education-grid {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .education-card {
+                padding: 25px;
+            }
+            
+            .education-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
@@ -1830,11 +2046,13 @@
                         </div>
                         <div class="education-content">
                             <span class="education-year">2024 - 2028</span>
-                            <h3 class="education-title">BS-CS</h3>
-                            <div class="education-institution">Punjab University, Lahore</div>
-                            <div class="education-institution">CGPA: 3.58</div>
+                            <h3 class="education-title">BS in Computer Science</h3>
+                            <div class="education-details">
+                                <div class="education-institution">Punjab University, Lahore</div>
+                                <div class="education-marks">CGPA: 3.58/4.0</div>
+                            </div>
                             <p class="education-description">
-                                Studying Artificial Intelligence and Web Development, with coursework in Machine Learning, Data Structures, Web Technologies, and Databases.
+                                Specializing in Artificial Intelligence and Web Development. Core coursework includes Machine Learning, Data Structures, Web Technologies, and Database Systems.
                             </p>
                         </div>
                     </div>
@@ -1846,11 +2064,13 @@
                         </div>
                         <div class="education-content">
                             <span class="education-year">2022 - 2024</span>
-                            <h3 class="education-title">Fsc - Pre-Eng.</h3>
-                            <div class="education-institution">Punjab College, Zafarwal</div>
-                            <div class="education-institution">Marks: 85.01%</div>
+                            <h3 class="education-title">FSc - Pre Engineering</h3>
+                            <div class="education-details">
+                                <div class="education-institution">Punjab College, Zafarwal</div>
+                                <div class="education-marks">Marks: 85.01%</div>
+                            </div>
                             <p class="education-description">
-                                Completed core studies in Math, Physics, and Chemistry with emphasis on problem-solving and analytical thinking.
+                                Completed advanced studies in Mathematics, Physics, and Chemistry with a focus on problem-solving and analytical thinking.
                             </p>
                         </div>
                     </div>
@@ -1862,11 +2082,13 @@
                         </div>
                         <div class="education-content">
                             <span class="education-year">2020 - 2022</span>
-                            <h3 class="education-title">Matric - Science</h3>
-                            <div class="education-institution">Ghazali School, Zafarwal</div>
-                            <div class="education-institution">Marks: 96%</div>
+                            <h3 class="education-title">Matriculation - Science</h3>
+                            <div class="education-details">
+                                <div class="education-institution">Ghazali School, Zafarwal</div>
+                                <div class="education-marks">Marks: 96%</div>
+                            </div>
                             <p class="education-description">
-                                Matriculated with a focus on Physics, Chemistry, and Math, building strong analytical and problem-solving skills.
+                                Focused on Physics, Chemistry, and Mathematics, developing strong analytical and problem-solving skills.
                             </p>
                         </div>
                     </div>
@@ -1874,6 +2096,33 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Add subtle animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const educationCards = document.querySelectorAll('.education-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            educationCards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                card.style.transitionDelay = `${index * 0.15}s`;
+                
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
 
     <!-- Portfolio Section - Improved -->
     <section id="portfolio" class="section">
