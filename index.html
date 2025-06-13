@@ -814,98 +814,91 @@
             transform: translateY(0);
         }
 
-        /* Education Section */
-        #education {
-            background: var(--light);
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
+/* Education Section */
+#education {
+    background: var(--light);
+    padding: 100px 0; /* Slightly reduced padding */
+    position: relative;
+    overflow: hidden;
+}
 
-        .education-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
+.education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
 
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; /* Reduced gap between cards */
+}
 
-        .education-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid var(--secondary);
-        }
+.education-card {
+    background: var(--card-bg);
+    border-radius: 16px; /* Slightly smaller radius */
+    padding: 30px; /* Reduced padding */
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary); /* Thinner border */
+}
 
-        .education-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
+.education-card:hover {
+    transform: translateY(-10px); /* More subtle hover effect */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 
-        .education-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 25px;
-            transition: var(--transition);
-        }
+.education-icon {
+    width: 70px; /* Slightly smaller */
+    height: 70px;
+    font-size: 2rem; /* Smaller icon */
+    margin: 0 auto 18px; /* Reduced margin */
+}
 
-        .education-card:hover .education-icon {
-            background: var(--gradient-accent);
-            transform: scale(1.1);
-        }
+.education-content {
+    text-align: center;
+}
 
-        .education-content {
-            text-align: center;
-        }
+/* Consolidated year/institution container */
+.education-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Reduced gap between elements */
+    margin-bottom: 16px;
+}
 
-        .education-year {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 15px;
-            display: inline-block;
-            padding: 6px 15px;
-            background: rgba(62, 146, 204, 0.15);
-            border-radius: 30px;
-        }
+.education-year {
+    font-size: 1rem;
+    padding: 5px 12px;
+    margin-bottom: 0; /* Removed bottom margin */
+}
 
-        .education-title {
-            font-size: 1.7rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
+.education-title {
+    font-size: 1.5rem; /* Slightly smaller */
+    margin-bottom: 6px; /* Reduced gap */
+    line-height: 1.3;
+}
 
-        .education-institution {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
+.education-institution {
+    font-size: 1.05rem;
+    margin-bottom: 6px; /* Reduced gap */
+    line-height: 1.3;
+}
 
-        .education-description {
-            margin-bottom: 0;
-            color: #555;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
+.education-marks {
+    display: block;
+    font-weight: 500;
+    color: #444;
+    font-size: 0.95rem;
+    margin-top: 2px; /* Minimal top margin */
+}
+
+.education-description {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-top: 14px; /* Added top margin instead of bottom */
+}
 
         /* Dark mode education card adjustments */
         body.dark-mode .education-card {
