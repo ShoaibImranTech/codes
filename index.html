@@ -2362,7 +2362,7 @@ contactForm.addEventListener('submit', (e) => {
     submitBtn.disabled = true;
 
     // Send email using EmailJS
-    emailjs.send("service_e0wb3sg", "YOUR_TEMPLATE_ID", data)
+    emailjs.send("service_e0wb3sg", "template_yp59ctl", data)
         .then(() => {
             showNotification('Message sent successfully! I will get back to you soon.', true);
             contactForm.reset();
@@ -2376,6 +2376,7 @@ contactForm.addEventListener('submit', (e) => {
             submitBtn.disabled = false;
         });
 });
+
 
         // Page load animations
         document.addEventListener('DOMContentLoaded', () => {
@@ -2452,6 +2453,7 @@ contactForm.addEventListener('submit', (e) => {
     </script>
 </body>
 </html>
+
 
 
 
