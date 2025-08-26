@@ -2381,6 +2381,7 @@
       })
       .catch((error) => {
         console.error("EmailJS Error:", error);
+        console.log("Erorring in ",error);
         showNotification("❌ Failed to send message. Please try again later.", false);
       })
       .finally(() => {
@@ -2463,6 +2464,7 @@
     </script>
 </body>
 </html>
+
 
 
 
