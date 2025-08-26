@@ -2333,24 +2333,24 @@
 
         document.querySelectorAll('.section').forEach(section => observer.observe(section));
 
-// Initialize EmailJS
-(function(){
-   emailjs.init("_cyEIXdzWrVe6DBTy"); // 🔑 replace with your actual EmailJS public key
-})();
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("_cyEIXdzWrVe6DBTy"); // replace with your EmailJS Public Key
+  })();
 
-// Form submission with email notification
-const contactForm = document.getElementById('contactForm');
-const notification = document.getElementById('notification');
-const notificationText = document.querySelector('.notification-text');
+  const contactForm = document.getElementById('contactForm');
+  const notification = document.getElementById('notification');
+  const notificationText = document.querySelector('.notification-text');
 
-function showNotification(message, isSuccess = true) {
+  function showNotification(message, isSuccess = true) {
     notificationText.textContent = message;
     notification.className = `notification ${isSuccess ? 'success' : 'error'} show`;
     setTimeout(() => notification.classList.remove('show'), 5000);
-}
+  }
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // ✅ Stops form from refreshing
 
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
@@ -2358,24 +2358,24 @@ contactForm.addEventListener('submit', (e) => {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
 
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.innerHTML = 'Sending...';
     submitBtn.disabled = true;
 
-    // Send email using EmailJS
     emailjs.send("service_e0wb3sg", "template_yp59ctl", data)
-        .then(() => {
-            showNotification('Message sent successfully! I will get back to you soon.', true);
-            contactForm.reset();
-        })
-        .catch((error) => {
-            console.error("EmailJS Error:", error);
-            showNotification('Failed to send message. Please try again later.', false);
-        })
-        .finally(() => {
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-        });
-});
+      .then(() => {
+        showNotification('✅ Message sent successfully! I will get back to you soon.', true);
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        showNotification('❌ Failed to send message. Please try again later.', false);
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      });
+  });
+</script>
 
 
         // Page load animations
@@ -2453,6 +2453,7 @@ contactForm.addEventListener('submit', (e) => {
     </script>
 </body>
 </html>
+
 
 
 
