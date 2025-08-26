@@ -2334,57 +2334,58 @@
         }, observerOptions);
 
         document.querySelectorAll('.section').forEach(section => observer.observe(section));
-         // ✅ Initialize EmailJS
-(function () {
-  emailjs.init({
-    publicKey: "_cyEIXdzWrVe6DBTy" // replace with your EmailJS Public Key
-  });
-})();
-
-const contactForm = document.getElementById("contactForm");
-const notification = document.getElementById("notification");
-const notificationText = document.querySelector(".notification-text");
-
-// ✅ Function to show success/error notification
-function showNotification(message, isSuccess = true) {
-  if (!notification || !notificationText) return;
-
-  notificationText.textContent = message;
-  notification.className = `notification ${isSuccess ? "success" : "error"} show`;
-
-  setTimeout(() => {
-    notification.classList.remove("show");
-  }, 5000);
-}
-
-// ✅ Handle form submission
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Prevents page reload
-
-  const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData.entries());
-
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  const originalBtnText = submitBtn.innerHTML;
-
-  submitBtn.innerHTML = "Sending...";
-  submitBtn.disabled = true;
-
-  // Replace with your EmailJS service & template IDs
-  emailjs.send("service_e0wb3sg", "template_yp59ctl", data)
-    .then(() => {
-      showNotification("✅ Message sent successfully! I will get back to you soon.", true);
-      contactForm.reset();
-    })
-    .catch((error) => {
-      console.error("EmailJS Error:", error);
-      showNotification("❌ Failed to send message. Please try again later.", false);
-    })
-    .finally(() => {
-      submitBtn.innerHTML = originalBtnText;
-      submitBtn.disabled = false;
-    });
+      
 });
+             // ✅ Initialize EmailJS
+  (function () {
+    emailjs.init({
+      publicKey: "_cyEIXdzWrVe6DBTy" // Replace with your EmailJS Public Key
+    });
+  })();
+
+  const contactForm = document.getElementById("contactForm");
+  const notification = document.getElementById("notification");
+  const notificationText = document.querySelector(".notification-text");
+
+  // ✅ Function to show success/error notification
+  function showNotification(message, isSuccess = true) {
+    if (!notification || !notificationText) return;
+
+    notificationText.textContent = message;
+    notification.className = `notification ${isSuccess ? "success" : "error"} show`;
+
+    setTimeout(() => {
+      notification.classList.remove("show");
+    }, 5000);
+  }
+
+  // ✅ Handle form submission
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevents page reload
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML = "Sending...";
+    submitBtn.disabled = true;
+
+    // ✅ Replace with your EmailJS Service ID & Template ID
+    emailjs.send("service_e0wb3sg", "template_yp59ctl", data)
+      .then(() => {
+        showNotification("✅ Message sent successfully! I will get back to you soon.", true);
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        showNotification("❌ Failed to send message. Please try again later.", false);
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      });
 
         // Page load animations
         document.addEventListener('DOMContentLoaded', () => {
@@ -2461,6 +2462,7 @@ contactForm.addEventListener("submit", (e) => {
     </script>
 </body>
 </html>
+
 
 
 
