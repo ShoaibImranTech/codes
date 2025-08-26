@@ -2338,11 +2338,9 @@
       
 });
              // ✅ Initialize EmailJS
-  (function () {
-    emailjs.init({
-      publicKey: "9FI64TNuhWqa0h7hg" // Replace with your EmailJS Public Key
-    });
-  })();
+// Correct way for CDN/email.min.js
+emailjs.init("ty04Y-cNdjh7AH8HN");
+
 
   const contactForm = document.getElementById("contactForm");
   const notification = document.getElementById("notification");
@@ -2464,6 +2462,7 @@
     </script>
 </body>
 </html>
+
 
 
 
