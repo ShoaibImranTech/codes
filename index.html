@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -2339,7 +2339,7 @@
 });
              // ✅ Initialize EmailJS
    (function() {
-            emailjs.init("ty04Y-cNdjh7AH8HN"); // Replace with your actual EmailJS public key
+            emailjs.init("_8mm4anq"); // Replace with your actual EmailJS public key
         })();
 
   const contactForm = document.getElementById("contactForm");
@@ -2372,7 +2372,7 @@
     submitBtn.disabled = true;
 
     // ✅ Replace with your EmailJS Service ID & Template ID
-    emailjs.send("service_e0wb3sg", "template_yp59ctl", data)
+    emailjs.send("service_8mm4anq", "template_yp59ctl", data)
       .then(() => {
         showNotification("✅ Message sent successfully! I will get back to you soon.", true);
         contactForm.reset();
@@ -2462,6 +2462,7 @@
     </script>
 </body>
 </html>
+
 
 
 
