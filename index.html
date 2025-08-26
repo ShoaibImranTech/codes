@@ -2324,19 +2324,6 @@
 
             skillsAnimated = true;
         }
-
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target.id === 'about') {
-                    animateSkills();
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section').forEach(section => observer.observe(section));
-      
-});
              // ✅ Initialize EmailJS
    (function() {
             emailjs.init("_puyX3tOM6aoiAyeE"); // Replace with your actual EmailJS public key
@@ -2462,6 +2449,7 @@
     </script>
 </body>
 </html>
+
 
 
 
